@@ -1,0 +1,17 @@
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Mac OS ###
+.DS_Store
+
+# User-specific stuff
+.idea
+
+# File-based project format
+*.iws
+*.iml
+modules.xml
+.idea/misc.xml
+*.ipr
