@@ -27,7 +27,7 @@ fun part2(lines: List<List<String>>): Int =
     }
 
 fun main() {
-    val lines = File("/Users/kinnera/kinnerapriyap/advent-of-code-2022/src/main/kotlin/day02/day2_input.txt")
+    val lines = File("src/main/kotlin/day02/day2_input.txt")
         .bufferedReader()
         .readLines()
         .map { it.split(" ", limit = 2) }

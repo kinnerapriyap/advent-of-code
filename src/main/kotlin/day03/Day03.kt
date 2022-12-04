@@ -22,7 +22,7 @@ fun Char.getValue(): Int =
     }
 
 fun main() {
-    val lines = File("/Users/kinnera/kinnerapriyap/advent-of-code-2022/src/main/kotlin/day03/day3_input.txt")
+    val lines = File("src/main/kotlin/day03/day3_input.txt")
         .bufferedReader()
         .readLines()
     println(part1(lines))
