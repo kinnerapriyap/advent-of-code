@@ -1,6 +1,6 @@
 package day24
 
-import day14.Point
+import utils.data.Point
 import java.io.File
 
 enum class Type(val row: Int, val col: Int) {

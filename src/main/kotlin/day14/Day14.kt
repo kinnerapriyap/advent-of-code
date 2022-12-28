@@ -1,10 +1,9 @@
 package day14
 
+import utils.data.Point
 import java.io.File
 import kotlin.math.min
 import kotlin.math.max
-
-data class Point(val row: Int, val col: Int)
 
 fun part1(rocks: HashSet<Point>): Int = rocks.fillInSand().size
 
@@ -76,19 +75,4 @@ fun HashSet<Point>.addFloor(): HashSet<Point> {
     val seconds = rocks.map { it.col }
     for (j in seconds.min() - 1000..seconds.max() + 1000) rocks.add(Point(floorRow, j))
     return rocks
-}
-
-fun printRocks(rocks: HashSet<Point>, sand: HashSet<Point>) {
-    val firsts = rocks.map { it.row }
-    val seconds = rocks.map { it.col }
-    for (i in -1..firsts.max()) {
-        for (j in seconds.min() - 1..seconds.max() + 1) {
-            print(
-                if (rocks.contains(Point(i, j))) "# "
-                else if (sand.contains(Point(i, j))) "o "
-                else ". "
-            )
-        }
-        println()
-    }
 }

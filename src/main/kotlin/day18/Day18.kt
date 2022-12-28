@@ -1,5 +1,6 @@
 package day18
 
+import utils.data.Point3D
 import java.io.File
 
 fun part1(lines: List<Point3D>): Int =
@@ -33,13 +34,4 @@ fun main() {
         .map { (x, y, z) -> Point3D(x, y, z) }
     println(part1(lines))
     println(part2(lines))
-}
-
-data class Point3D(val x: Int, val y: Int, val z: Int) {
-    override fun toString(): String = "($x,$y,$z)"
-    fun getFaces() = setOf(
-        Point3D(x + 1, y, z), Point3D(x - 1, y, z),
-        Point3D(x, y + 1, z), Point3D(x, y - 1, z),
-        Point3D(x, y, z + 1), Point3D(x, y, z - 1)
-    )
 }

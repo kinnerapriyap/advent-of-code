@@ -1,9 +1,9 @@
 package day23
 
-import day14.Point
 import day23.Direction.Companion.canMove
 import day23.Direction.Companion.movableOrder
 import day23.Direction.Companion.newPoint
+import utils.data.Point
 import java.io.File
 import java.util.Collections
 
