@@ -1,3 +1,5 @@
 # Advent Of Code
+### https://adventofcode.com/
 
-[2022](/src/main/kotlin/year2022) - https://adventofcode.com/2022/
+* [Year 2022 Solutions](/src/main/kotlin/year2022)
+* [Year 2021 Solutions](/src/main/kotlin/year2021)
