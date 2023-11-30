@@ -13,7 +13,8 @@ abstract class Day(
     }
 
     abstract fun partOne(): Any
-    abstract fun partTwo(): Any
+    open fun partTwo(): Any = ""
+
     fun printDay() {
         val header = "Day $dayNumber, $year"
         val footer = "—".repeat(header.length)

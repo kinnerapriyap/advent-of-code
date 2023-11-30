@@ -16,8 +16,4 @@ class Day1 : Day(dayNumber = 1, year = 2023) {
     override fun partOne(): Any {
         TODO("Not yet implemented")
     }
-
-    override fun partTwo(): Any {
-        TODO("Not yet implemented")
-    }
 }
