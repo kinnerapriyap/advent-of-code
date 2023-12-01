@@ -1,4 +1,4 @@
-package year2023.day1
+package year2023.solutions
 
 import utils.setup.Day
 
