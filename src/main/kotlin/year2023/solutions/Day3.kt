@@ -5,18 +5,22 @@ import utils.setup.Day
 
 fun main() = Day3().printDay()
 
-class Day3 : Day(dayNumber = 3, year = 2023, useSampleInput = true) {
-    private val special = inputList.mapIndexed { row, str ->
-        str.mapIndexedNotNull { col, c ->
-            if (!c.isDigit() && c != '.') Point(row, col) else null
-        }
-    }.flatten()
+class Day3 : Day(dayNumber = 3, year = 2023, useSampleInput = false) {
+    private fun special(onlyStar: Boolean = false): List<Point> =
+        inputList.mapIndexed { row, str ->
+            str.mapIndexedNotNull { col, c ->
+                if (!c.isDigit() && c != '.') {
+                    if ((onlyStar && c == '*') || !onlyStar) Point(row, col) else null
+                } else null
+            }
+        }.flatten()
+
+    private val colMax = inputList[0].length
 
     private fun getNumbers(): List<Pair<Int, List<Point>>> {
         val numbers = mutableListOf<Pair<Int, List<Point>>>()
         var current = 0
         var start: Point? = null
-        var symbolFound = false
         inputList
             .mapIndexed { row, s ->
                 s.forEachIndexed { col, char ->
@@ -25,16 +29,10 @@ class Day3 : Day(dayNumber = 3, year = 2023, useSampleInput = true) {
                             start = Point(row, col)
                             char.digitToInt()
                         } else current * 10 + char.digitToInt()
-                        if (
-                            Point(row, col).allSides()
-                                .map { inputList.getOrNull(it.row)?.getOrNull(it.col) }
-                                .any { it?.isDigit() == false && it != '.' }
-                        ) symbolFound = true
-                    } else if (current != 0 && symbolFound) {
-                        numbers.add(current to (start!!.col until col).map { Point(row, it) })
-                        current = 0
-                        symbolFound = false
-                    } else {
+                    } else if (current != 0) {
+                        val c = if (col == 0 && start!!.col != 0) colMax else col
+                        val r = if (col == 0 && start!!.col != 0) row - 1 else row
+                        numbers.add(current to (start!!.col until c).map { Point(r, it) })
                         current = 0
                     }
                 }
@@ -43,10 +41,20 @@ class Day3 : Day(dayNumber = 3, year = 2023, useSampleInput = true) {
     }
 
     override fun partOne(): Any {
-        return getNumbers().sumOf { it.first }
+        val special = special()
+        return getNumbers()
+            .filter { (_, points) -> points.any { it.allSides().any { x -> x in special } } }
+            .sumOf { it.first }
     }
 
     override fun partTwo(): Any {
-        return ""
+        return buildMap<Point, MutableList<Int>> {
+            val stars = special(true).toSet()
+            getNumbers().forEach { (num, points) ->
+                points.map { it.allSides() }.flatten().intersect(stars).forEach {
+                    put(it, getOrDefault(it, mutableListOf()).apply { add(num) })
+                }
+            }
+        }.values.filter { it.size == 2 }.sumOf { it.reduce { acc, i -> acc * i } }
     }
 }
