@@ -8,4 +8,13 @@ data class Point(val row: Int, val col: Int) {
     fun up() = Point(row, col - 1)
 
     fun neighbors(): Set<Point> = setOf(right(), left(), down(), up())
+
+    fun diagonals(): Set<Point> = setOf(
+        Point(row + 1, col + 1),
+        Point(row - 1, col - 1),
+        Point(row + 1, col - 1),
+        Point(row - 1, col + 1),
+    )
+
+    fun allSides(): Set<Point> = neighbors() + diagonals()
 }
