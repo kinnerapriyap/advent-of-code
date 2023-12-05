@@ -11,19 +11,17 @@ class Day5 : Day(dayNumber = 5, year = 2023, useSampleInput = false) {
             .filterNot { it.isEmpty() }.toList()
     }
 
+    private val inputMaps = input.subList(1, input.size).map { inputType ->
+        inputType.map { (d, s, r) -> s until s + r to d - s }
+    }
+
     override fun partOne(): Any {
-        val inputMaps = input.subList(1, input.size).map { inputType ->
-            inputType.map { (d, s, r) -> s until s + r to d - s }
-        }
         return input[0].first().minOfOrNull { n ->
             inputMaps.fold(n) { acc, pairs -> pairs.getNumber(acc) }
         } ?: 0
     }
 
     override fun partTwo(): Any {
-        val inputMaps = input.subList(1, input.size).map { inputType ->
-            inputType.map { (d, s, r) -> s until s + r to d - s }
-        }
         return input[0][0].chunked(2)
             .minOf { (start, size) ->
                 (start until start + size).minOf { n ->
