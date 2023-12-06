@@ -1,4 +1,4 @@
-package year2021
+package year2021.solutions
 
 import utils.data.hasAtIndex
 import utils.setup.Day
