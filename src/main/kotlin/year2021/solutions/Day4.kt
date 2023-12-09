@@ -3,9 +3,9 @@ package year2021.solutions
 import utils.data.hasAtIndex
 import utils.setup.Day
 
-fun main() = Day04().printDay()
+fun main() = Day4().printDay()
 
-class Day04 : Day(dayNumber = 4, year = 2021, useSampleInput = false) {
+class Day4 : Day(dayNumber = 4, year = 2021, useSampleInput = false) {
 
     private val input = inputString.split("\n\n")
 
