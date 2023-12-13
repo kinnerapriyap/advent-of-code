@@ -27,3 +27,11 @@ fun Long.gcd(b: Long): Long {
     }
     return left
 }
+
+infix fun <E> Collection<E>.symmetricDifference(other: Collection<E>): List<E> {
+    val left = other.toMutableList()
+    forEach { i -> left.remove(i) }
+    val right = toMutableList()
+    other.forEach { i -> right.remove(i) }
+    return left + right
+}
