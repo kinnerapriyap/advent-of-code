@@ -2,9 +2,7 @@ package year2021.solutions
 
 import utils.setup.Day
 
-fun main() = Day().printDay()
-
-class Day : Day(dayNumber = 6, year = 2021, useSampleInput = false) {
+class Day6 : Day(dayNumber = 6, year = 2021, useSampleInput = false) {
     private val input = inputString.split(",").mapNotNull { it.trim().toIntOrNull() }
 
     override fun partOne(): Any {

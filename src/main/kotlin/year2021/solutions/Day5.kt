@@ -3,8 +3,6 @@ package year2021.solutions
 import utils.setup.Day
 import java.awt.Point
 
-fun main() = Day5().printDay()
-
 class Day5 : Day(dayNumber = 5, year = 2021, useSampleInput = false) {
     private val input = inputList.map { str ->
         str.split("->").map { e ->
