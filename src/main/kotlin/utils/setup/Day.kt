@@ -22,8 +22,8 @@ abstract class Day(
         val footer = "—".repeat(header.length)
 
         println(header)
-        println("Part 1: ${partOne()}")
-        println("Part 2: ${partTwo()}")
+        println("Part 1: \n${partOne()}")
+        println("Part 2: \n${partTwo()}")
         println(footer)
     }
 

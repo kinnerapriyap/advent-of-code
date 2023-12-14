@@ -35,3 +35,19 @@ infix fun <E> Collection<E>.symmetricDifference(other: Collection<E>): List<E> {
     other.forEach { i -> right.remove(i) }
     return left + right
 }
+
+fun <T> List<T>.findLongestSequence(): Pair<Int, Int> {
+    val sequences = mutableListOf<Pair<Int, Int>>()
+    for (startPos in indices) {
+        for (sequenceLength in 1..(this.size - startPos) / 2) {
+            var sequencesAreEqual = true
+            for (i in 0 until sequenceLength)
+                if (this[startPos + i] != this[startPos + sequenceLength + i]) {
+                    sequencesAreEqual = false
+                    break
+                }
+            if (sequencesAreEqual) sequences += Pair(startPos, sequenceLength)
+        }
+    }
+    return sequences.maxBy { it.second }
+}
