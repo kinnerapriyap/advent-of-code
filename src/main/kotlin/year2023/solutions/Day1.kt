@@ -2,8 +2,6 @@ package year2023.solutions
 
 import utils.setup.Day
 
-fun main() = Day1().printDay()
-
 class Day1 : Day(dayNumber = 1, year = 2023, useSampleInput = true) {
     override fun partOne(): Any =
         inputList.sumOf { str ->

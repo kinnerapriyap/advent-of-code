@@ -2,8 +2,6 @@ package year2023.solutions
 
 import utils.setup.Day
 
-fun main() = Day5().printDay()
-
 class Day5 : Day(dayNumber = 5, year = 2023, useSampleInput = false) {
     private val input = inputString.split("\n\n").map { str ->
         str.splitToSequence("\n")

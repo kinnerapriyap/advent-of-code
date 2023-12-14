@@ -4,8 +4,6 @@ import utils.data.Point
 import utils.setup.Day
 import kotlin.math.abs
 
-fun main() = Day11().printDay()
-
 class Day11 : Day(dayNumber = 11, year = 2023, useSampleInput = false) {
     override fun partOne(): Any {
         return getTotalDistance()

@@ -3,8 +3,6 @@ package year2023.solutions
 import utils.data.lcm
 import utils.setup.Day
 
-fun main() = Day8().printDay()
-
 class Day8 : Day(dayNumber = 8, year = 2023, useSampleInput = false) {
     private val input = inputList.subList(2, inputList.size).associate { str ->
         val (root, rest) = str.split("=")

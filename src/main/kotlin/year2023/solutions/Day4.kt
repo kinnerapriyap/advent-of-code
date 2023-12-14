@@ -3,8 +3,6 @@ package year2023.solutions
 import utils.setup.Day
 import kotlin.math.pow
 
-fun main() = Day4().printDay()
-
 class Day4 : Day(dayNumber = 4, year = 2023, useSampleInput = false) {
     private val input = inputList.map { str ->
         val (number, rest) = str.split(": ")

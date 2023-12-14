@@ -2,8 +2,6 @@ package year2023.solutions
 
 import utils.setup.Day
 
-fun main() = Day7().printDay()
-
 class Day7 : Day(dayNumber = 7, year = 2023, useSampleInput = false) {
     private val input = inputList.map { str ->
         str.split(" ").let { it[0].toList() to it[1].trim().toInt() }

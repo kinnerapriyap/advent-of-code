@@ -4,10 +4,6 @@ import utils.data.Point
 import utils.data.get
 import utils.setup.Day
 
-fun main() {
-    Day10().printDay()
-}
-
 class Day10 : Day(dayNumber = 10, year = 2023, useSampleInput = false) {
     private val basic = inputList.map { it.toList() }
     private val start = basic.indexOfFirst { 'S' in it }.let { Point(it, basic[it].indexOf('S')) }

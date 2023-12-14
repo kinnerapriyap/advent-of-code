@@ -2,8 +2,6 @@ package year2023.solutions
 
 import utils.setup.Day
 
-fun main() = Day12().printDay()
-
 class Day12 : Day(dayNumber = 12, year = 2023, useSampleInput = false) {
     private fun getInput(n: Int = 1) = inputList.map { str ->
         val (row, num) = str.split(" ")

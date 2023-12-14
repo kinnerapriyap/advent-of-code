@@ -3,8 +3,6 @@ package year2023.solutions
 import utils.data.product
 import utils.setup.Day
 
-fun main() = Day6().printDay()
-
 class Day6 : Day(dayNumber = 6, year = 2023, useSampleInput = false) {
     private val input = inputList.map { str ->
         str.split(":")[1].split(" ").mapNotNull { it.toIntOrNull() }

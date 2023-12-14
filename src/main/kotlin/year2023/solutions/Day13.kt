@@ -3,8 +3,6 @@ package year2023.solutions
 import utils.data.symmetricDifference
 import utils.setup.Day
 
-fun main() = Day13().printDay()
-
 @OptIn(ExperimentalStdlibApi::class)
 class Day13 : Day(dayNumber = 13, year = 2023, useSampleInput = false) {
     override fun partOne(): Any {

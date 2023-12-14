@@ -3,8 +3,6 @@ package year2023.solutions
 import utils.data.findLongestSequence
 import utils.setup.Day
 
-fun main() = Day14().printDay()
-
 class Day14 : Day(dayNumber = 14, year = 2023, useSampleInput = false) {
 
     override fun partOne(): Any {
