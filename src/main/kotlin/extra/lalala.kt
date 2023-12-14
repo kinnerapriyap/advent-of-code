@@ -51,12 +51,3 @@ fun findGCD3(a: Long, b: Long): Long {
 
 private fun findGCD4(a: Int, b: Int): Int =
     if (a == 0) b else findGCD4(b % a, a)
-
-fun main() {
-    //insertGreatestCommonDivisors(null)
-    println(findGCD4(12, 32))
-    println(findGCD4(3, 10))
-    println(findGCD4(18, 6))
-    println(findGCD4(32, 12))
-    println(12%32)
-}
