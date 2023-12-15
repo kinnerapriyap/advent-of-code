@@ -2,8 +2,6 @@ package year2023.solutions
 
 import utils.setup.Day
 
-fun main() = Day15().printDay()
-
 class Day15 : Day(dayNumber = 15, year = 2023, useSampleInput = true) {
     private val input = inputString.split(",")
 
