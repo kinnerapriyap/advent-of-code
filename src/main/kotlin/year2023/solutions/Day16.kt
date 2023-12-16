@@ -8,8 +8,6 @@ import utils.data.move
 import utils.data.verticalOrthoDirections
 import utils.setup.Day
 
-fun main() = Day16().printDay()
-
 class Day16 : Day(dayNumber = 16, year = 2023, useSampleInput = false) {
     private val input = inputList.map { str -> str.toList() }
 
