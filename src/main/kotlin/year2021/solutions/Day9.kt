@@ -5,8 +5,6 @@ import utils.data.get
 import utils.data.product
 import utils.setup.Day
 
-fun main() = Day9().printDay()
-
 class Day9 : Day(dayNumber = 9, year = 2021, useSampleInput = false) {
     private val input = inputList.map { str -> str.map { it.digitToInt() } }
     private val lowPoints = input.mapIndexed { row, ints ->
