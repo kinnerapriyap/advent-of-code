@@ -12,6 +12,24 @@ fun <T> List<List<T>>.get(point: Point): T? =
 fun <T> Array<Array<T>>.get(point: Point): T? =
     getOrNull(point.row)?.getOrNull(point.col)
 
+fun List<IntArray>.get(point: Point): Int? =
+    getOrNull(point.row)?.getOrNull(point.col)
+
+fun Array<IntArray>.get(point: Point): Int? =
+    getOrNull(point.row)?.getOrNull(point.col)
+
+fun List<LongArray>.get(point: Point): Long? =
+    getOrNull(point.row)?.getOrNull(point.col)
+
+fun Array<LongArray>.get(point: Point): Long? =
+    getOrNull(point.row)?.getOrNull(point.col)
+
+fun List<CharArray>.get(point: Point): Char? =
+    getOrNull(point.row)?.getOrNull(point.col)
+
+fun Array<CharArray>.get(point: Point): Char? =
+    getOrNull(point.row)?.getOrNull(point.col)
+
 fun <T> List<List<T>>.getGridNeighbours(point: Point): List<T> =
     point.neighbors().mapNotNull { get(it) }
 
@@ -44,6 +62,21 @@ fun <T> List<List<T>>.printGrid() {
 }
 
 fun <T> Array<Array<T>>.printGrid() {
+    println()
+    println(joinToString("\n") { it.joinToString(" ") })
+}
+
+fun Array<IntArray>.printGrid() {
+    println()
+    println(joinToString("\n") { it.joinToString(" ") })
+}
+
+fun Array<LongArray>.printGrid() {
+    println()
+    println(joinToString("\n") { it.joinToString(" ") })
+}
+
+fun Array<CharArray>.printGrid() {
     println()
     println(joinToString("\n") { it.joinToString(" ") })
 }
