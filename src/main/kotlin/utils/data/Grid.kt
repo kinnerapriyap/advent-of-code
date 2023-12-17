@@ -37,3 +37,13 @@ fun <T> Array<Array<T>>.hasAtIndex(thing: T): Point? {
     }
     return null
 }
+
+fun <T> List<List<T>>.printGrid() {
+    println()
+    println(joinToString("\n") { it.joinToString(" ") })
+}
+
+fun <T> Array<Array<T>>.printGrid() {
+    println()
+    println(joinToString("\n") { it.joinToString(" ") })
+}
