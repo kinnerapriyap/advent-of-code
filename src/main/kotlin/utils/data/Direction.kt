@@ -14,6 +14,12 @@ fun DirectionOrtho.move(p: Point): Point =
         DirectionOrtho.LEFT -> p.left()
     }
 
+fun DirectionOrtho.move(p: Point, steps: Int): Point {
+    var o = p
+    repeat(steps) { o = move(o) }
+    return o
+}
+
 fun DirectionOrtho.left(): DirectionOrtho =
     when (this) {
         DirectionOrtho.UP -> DirectionOrtho.LEFT
