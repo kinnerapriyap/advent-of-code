@@ -6,8 +6,6 @@ import utils.data.move
 import utils.setup.Day
 import kotlin.math.abs
 
-fun main() = Day18().printDay()
-
 class Day18 : Day(dayNumber = 18, year = 2023, useSampleInput = false) {
     data class TD(val dir: DirectionOrtho, val steps: Int, val colorDir: DirectionOrtho, val colorSteps: Int)
 
