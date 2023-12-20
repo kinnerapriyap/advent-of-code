@@ -3,9 +3,7 @@ package year2023.solutions
 import utils.data.lcm
 import utils.setup.Day
 
-fun main() = Day20().printDay()
-
-class Day20 : Day(dayNumber = 20, year = 2023, useSampleInput = false) {
+class Day20 : Day(dayNumber = 20, year = 2023, useSampleInput = true) {
 
     private val hashMap = hashMapOf<String, Module>()
 
