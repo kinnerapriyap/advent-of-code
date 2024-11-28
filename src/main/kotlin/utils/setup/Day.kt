@@ -1,7 +1,5 @@
 package utils.setup
 
-import utils.data.Point
-
 abstract class Day(
     private val dayNumber: Int,
     private val year: Int,
