@@ -1,5 +1,6 @@
 package year2023.solutions
 
+/*
 import org.jgrapht.alg.StoerWagnerMinimumCut
 import org.jgrapht.graph.DefaultWeightedEdge
 import org.jgrapht.graph.SimpleWeightedGraph
@@ -19,4 +20,4 @@ class Day25 : Day(dayNumber = 25, year = 2023, useSampleInput = false) {
         val oneSideSize = StoerWagnerMinimumCut(graph).minCut().size
         return (graph.vertexSet().size - oneSideSize) * oneSideSize
     }
-}
+}*/
