@@ -17,4 +17,10 @@ data class Point(val row: Int, val col: Int) {
     )
 
     fun allSides(): Set<Point> = neighbors() + diagonals()
+
+    fun add(point: Point): Point = Point(row + point.row, col + point.col)
 }
+
+fun neighborsDelta(): Set<Point> = setOf(Point(0, 1), Point(1, 0), Point(0, -1), Point(-1, 0))
+
+fun diagonalsDelta(): Set<Point> = setOf(Point(1, 1), Point(1, -1), Point(-1, -1), Point(-1, 1))
