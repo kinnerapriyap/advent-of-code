@@ -2,10 +2,10 @@ package utils.data
 
 data class Point(val row: Int, val col: Int) {
     override fun toString(): String = "($row,$col)"
-    fun right() = Point(row, col + 1)
-    fun left() = Point(row, col - 1)
-    fun down() = Point(row + 1, col)
-    fun up() = Point(row - 1, col)
+    fun right() = add(rightDelta)
+    fun left() = add(leftDelta)
+    fun down() = add(downDelta)
+    fun up() = add(upDelta)
 
     fun neighbors(): Set<Point> = setOf(right(), left(), down(), up())
 
@@ -21,6 +21,15 @@ data class Point(val row: Int, val col: Int) {
     fun add(point: Point): Point = Point(row + point.row, col + point.col)
 }
 
-fun neighborsDelta(): Set<Point> = setOf(Point(0, 1), Point(1, 0), Point(0, -1), Point(-1, 0))
+val rightDelta = Point(1, 0)
+val leftDelta = Point(-1, 0)
+val upDelta = Point(0, -1)
+val downDelta = Point(0, 1)
+val upRightDelta = Point(1, 1)
+val upLeftDelta = Point(1, -1)
+val downRightDelta = Point(-1, 1)
+val downLeftDelta = Point(-1, -1)
 
-fun diagonalsDelta(): Set<Point> = setOf(Point(1, 1), Point(1, -1), Point(-1, -1), Point(-1, 1))
+val neighborsDelta: Set<Point> = setOf(rightDelta, leftDelta, upDelta, downDelta)
+val diagonalsDelta: Set<Point> = setOf(upRightDelta, upLeftDelta, downRightDelta, downLeftDelta)
+val allDelta = neighborsDelta + diagonalsDelta

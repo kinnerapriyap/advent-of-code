@@ -1,9 +1,8 @@
 package year2024.solutions.kotlin
 
 import utils.data.Point
-import utils.data.diagonalsDelta
+import utils.data.allDelta
 import utils.data.get
-import utils.data.neighborsDelta
 import utils.setup.Day
 
 fun main() = Day4().printDay()
@@ -15,7 +14,7 @@ class Day4 : Day(dayNumber = 4, year = 2024, useSampleInput = true) {
         var ans = 0
         input.forEachIndexed { row, chars ->
             chars.forEachIndexed { col, c ->
-                for ((dr, dc) in neighborsDelta() + diagonalsDelta()) {
+                for ((dr, dc) in allDelta) {
                     val word = "XMAS"
                     var (r, c) = row to col
                     var x = true
