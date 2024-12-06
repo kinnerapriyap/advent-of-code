@@ -1,5 +1,7 @@
 package utils.data
 
+import kotlin.collections.indexOf
+
 fun <T> List<List<T>>.get(row: Int, col: Int): T? =
     getOrNull(row)?.getOrNull(col)
 
@@ -56,9 +58,12 @@ fun <T> Array<Array<T>>.hasAtIndex(thing: T): Point? {
     return null
 }
 
-fun <T> List<List<T>>.printGrid() {
-    println()
-    println(joinToString("\n") { it.joinToString(" ") })
+fun List<CharArray>.hasAtIndex(thing: Char): Point? {
+    forEachIndexed { row, ts ->
+        val col = ts.indexOf(thing)
+        if (col != -1) return Point(row, col)
+    }
+    return null
 }
 
 fun <T> Array<Array<T>>.printGrid() {
@@ -76,7 +81,7 @@ fun Array<LongArray>.printGrid() {
     println(joinToString("\n") { it.joinToString(" ") })
 }
 
-fun Array<CharArray>.printGrid() {
+fun List<CharArray>.printGrid() {
     println()
     println(joinToString("\n") { it.joinToString(" ") })
 }

@@ -2,6 +2,33 @@ package utils.data
 
 enum class DirectionOrtho { UP, DOWN, RIGHT, LEFT }
 
+fun DirectionOrtho.toDelta(): Point =
+    when (this) {
+        DirectionOrtho.UP -> upDelta
+        DirectionOrtho.DOWN -> downDelta
+        DirectionOrtho.RIGHT -> rightDelta
+        DirectionOrtho.LEFT -> leftDelta
+    }
+
+fun DirectionOrtho.toSign(): Char =
+    when (this) {
+        DirectionOrtho.UP -> '^'
+        DirectionOrtho.DOWN -> 'v'
+        DirectionOrtho.RIGHT -> '>'
+        DirectionOrtho.LEFT -> '<'
+    }
+
+val directionOrthoSigns = listOf('^', 'v', '>', '<')
+
+fun Char.toDirectionOrtho(): DirectionOrtho =
+    when (this) {
+        '^' -> DirectionOrtho.UP
+        'v' -> DirectionOrtho.DOWN
+        '>' -> DirectionOrtho.RIGHT
+        '<' -> DirectionOrtho.LEFT
+        else -> DirectionOrtho.UP
+    }
+
 fun verticalOrthoDirections() = listOf(DirectionOrtho.UP, DirectionOrtho.DOWN)
 
 fun horizontalOrthoDirections() = listOf(DirectionOrtho.RIGHT, DirectionOrtho.LEFT)

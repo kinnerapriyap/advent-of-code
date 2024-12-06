@@ -21,10 +21,10 @@ data class Point(val row: Int, val col: Int) {
     fun add(point: Point): Point = Point(row + point.row, col + point.col)
 }
 
-val rightDelta = Point(1, 0)
-val leftDelta = Point(-1, 0)
-val upDelta = Point(0, -1)
-val downDelta = Point(0, 1)
+val rightDelta = Point(0, 1)
+val leftDelta = Point(0, -1)
+val upDelta = Point(-1, 0)
+val downDelta = Point(1, 0)
 val upRightDelta = Point(1, 1)
 val upLeftDelta = Point(1, -1)
 val downRightDelta = Point(-1, 1)
