@@ -12,7 +12,7 @@ object InputReader {
         fileReader(day, year, useSampleInput).readLines()
 
     private fun fileReader(day: Int, year: Int, useSampleInput: Boolean): BufferedReader =
-        (if (useSampleInput) "day${day}_input_test" else "day${day}_input").let {
+        (if (useSampleInput) "day${day}_input_test" else "input").let {
             File("src/main/kotlin/year$year/inputs/$it.txt")
                 .bufferedReader()
         }

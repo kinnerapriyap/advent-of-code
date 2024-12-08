@@ -1,5 +1,7 @@
 package utils.data
 
+import kotlin.math.abs
+
 data class Point(val row: Int, val col: Int) {
     override fun toString(): String = "($row,$col)"
     fun right() = add(rightDelta)
@@ -19,6 +21,8 @@ data class Point(val row: Int, val col: Int) {
     fun allSides(): Set<Point> = neighbors() + diagonals()
 
     fun add(point: Point): Point = Point(row + point.row, col + point.col)
+
+    fun manhattanDistance(other: Point): Int = abs(this.row - other.row) + abs(this.col - other.col)
 }
 
 val rightDelta = Point(0, 1)
