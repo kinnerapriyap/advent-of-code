@@ -3,7 +3,6 @@ package year2024.solutions.kotlin
 import utils.data.Point
 import utils.data.get
 import utils.setup.Day
-import kotlin.text.get
 
 fun main() = Day10().printDay()
 
