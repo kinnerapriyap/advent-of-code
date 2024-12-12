@@ -10,6 +10,15 @@ fun DirectionOrtho.toDelta(): Point =
         DirectionOrtho.LEFT -> leftDelta
     }
 
+fun Point.toDirectionOrtho(): DirectionOrtho =
+    when (this) {
+        upDelta -> DirectionOrtho.UP
+        downDelta -> DirectionOrtho.DOWN
+        rightDelta -> DirectionOrtho.RIGHT
+        leftDelta -> DirectionOrtho.LEFT
+        else -> DirectionOrtho.UP
+    }
+
 fun DirectionOrtho.toSign(): Char =
     when (this) {
         DirectionOrtho.UP -> '^'
