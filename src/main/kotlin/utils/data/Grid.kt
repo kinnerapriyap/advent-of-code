@@ -1,6 +1,7 @@
 package utils.data
 
 import kotlin.collections.indexOf
+import kotlin.collections.joinToString
 
 fun <T> List<List<T>>.get(row: Int, col: Int): T? =
     getOrNull(row)?.getOrNull(col)
@@ -82,6 +83,11 @@ fun Array<LongArray>.printGrid() {
 }
 
 fun List<CharArray>.printGrid() {
+    println()
+    println(joinToString("\n") { it.joinToString(" ") })
+}
+
+fun List<List<Char>>.printGridl() {
     println()
     println(joinToString("\n") { it.joinToString(" ") })
 }

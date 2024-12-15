@@ -23,6 +23,8 @@ data class Point(val row: Int, val col: Int) {
     fun add(point: Point): Point = Point(row + point.row, col + point.col)
 
     fun manhattanDistance(other: Point): Int = abs(this.row - other.row) + abs(this.col - other.col)
+
+    fun move(dir: DirectionOrtho): Point = dir.move(this)
 }
 
 val rightDelta = Point(0, 1)
